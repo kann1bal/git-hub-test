@@ -5,42 +5,14 @@ pipeline {
         stage('one') {
             steps {
                 echo 'Hi this zied from jenkins ..'
-            }
+            		}
         }
         stage('Two') {
             steps {
                 input 'do u wante to keep going..'
             }
         }
-        stage('three') {
-          	when  not {
-                			branch 'FromUbuntu'
-            }
-        
-        	steps{
-        		echo"hello this me "
-        	}
-        }
-        stage'Four'{
-        	parallel {
-        		stage 'unit test'{
-        			steps{
-        				echo'running the unit test'
-        			}
-        		}
-        		stage('integration test '){
-        		    		agent {
-        		    			docker{
-        		    				reuseNode false 
-        		    				image 'ubuntu'
-        		    			}
-        		    		}
-        		    		steps {
-        		    			echo'Running the integration test '
-        		    		}
-        					    	
-				}
-        	}	
-  		}
-  	}		
- } 			
+              					    	
+	 		}
+	  	}		
+ 			
